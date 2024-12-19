@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Registration Form</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #1e90ff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="file"] {
+            padding: 5px;
+        }
+
+        .form-actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-actions button {
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-actions button:hover {
+            background-color: #0056b3;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Sagada Tourist Registration</h1>
+    </header>
+
+    <!-- Registration Form -->
+    <div class="form-container">
+        <h2>Register Here</h2>
+        <form id="registrationForm">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">First Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your first name" required>
+            </div>
+
+            <!-- Surname -->
+            <div class="form-group">
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" placeholder="Enter your surname" required>
+            </div>
+
+            <!-- Age -->
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" required>
+            </div>
+
+            <!-- Date -->
+            <div class="form-group">
+                <label for="date">Date of Visit:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- Nationality -->
+            <div class="form-group">
+                <label for="nationality">Nationality:</label>
+                <input type="text" id="nationality" name="nationality" placeholder="Enter your nationality" required>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="form-group">
+                <label for="contact">Contact Info (Phone or Email):</label>
+                <input type="text" id="contact" name="contact" placeholder="Enter your phone number or email" required>
+            </div>
+
+            <!-- Region -->
+            <div class="form-group">
+                <label for="region">Region:</label>
+                <input type="text" id="region" name="region" placeholder="Enter your region" required>
+            </div>
+
+            <!-- Upload ID -->
+            <div class="form-group">
+                <label for="id-picture">Upload ID Picture:</label>
+                <input type="file" id="id-picture" name="id-picture" accept="image/*" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-actions">
+                <button type="submit">Submit Registration</button>
+            </div>
+        </form>
+        <div class="success-message" id="successMessage">
+            Registration Successful!
+        </div>
+    </div>
+
+    <script>
+        // Add JavaScript to handle form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from actually submitting
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block'; // Show success message
+            successMessage.textContent = 'Registration Successful!'; // Add success text
+            this.reset(); // Optionally reset the form after submission
+        });
+    </script>
+
+</body>
+</html>
